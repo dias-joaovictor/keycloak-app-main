@@ -13,11 +13,13 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '16.1.0'
+	implementation group: 'org.keycloak.bom', name: 'keycloak-adapter-bom', version: '16.1.0', ext: 'pom'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
